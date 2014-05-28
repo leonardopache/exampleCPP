@@ -3,10 +3,27 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "removerLogsAnteriores(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):main.cpp">
+         contextName = "realizaOrdenacaoLogs():main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "a.compare(&quot;.&quot;) != 0">
+            </PersistentString>
+            <PersistentString
+               value = "a.compare(&quot;..&quot;) != 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ordanaArquivoFinalPelaData(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "iniciarOrdenacaoDeArquivosDeLog(void*):main.cpp">
       </ContextState>
       <ContextState
          contextName = "sort(std::__1::vector&lt;std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;, std::__1::allocator&lt;std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; &gt; &gt;, long):main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "removerLogsAnteriores(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):main.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

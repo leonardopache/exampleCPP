@@ -81,21 +81,31 @@ void realizaProcessamentoLogs()
 //configura ambiente das maquinas simuladas
 void realizaOrdenacaoLogs()
 {
-    //inicializa threads
-	pthread_t d1, d2, d3, dx;
-    
     std::cout << "Ordenacao de arquivos iniciados \n";
-    //chama Threads para varredura de arquivos de log em cada maquina
-    pthread_create( &d1, NULL, iniciarOrdenacaoDeArquivosDeLog,reinterpret_cast<void*>(&t_maq_1));
-    pthread_create( &d2, NULL, iniciarOrdenacaoDeArquivosDeLog,reinterpret_cast<void*>(&t_maq_2));
-    pthread_create( &d3, NULL, iniciarOrdenacaoDeArquivosDeLog,reinterpret_cast<void*>(&t_maq_3));
-    pthread_create( &dx, NULL, iniciarOrdenacaoDeArquivosDeLog,reinterpret_cast<void*>(&t_maq_x));
+
+    DIR *dir = 0;
+    string dirPath = path;
+    struct dirent *entrada = 0;
+    unsigned char isDir = 0x4;
     
-    // synchronize threads:
-    pthread_join(d1,NULL);
-    pthread_join(d2,NULL);
-    pthread_join(d3,NULL);
-    pthread_join(dx,NULL);
+    dir = opendir (dirPath.c_str());
+    
+    if (dir == 0) {
+        std::cerr << "Nao foi possivel abrir diretorio." << std::endl;
+        exit (1);
+    }
+    
+    //Iterar sobre o diretorio
+    while ((entrada = readdir (dir)))
+        if (entrada->d_type == isDir)
+        {
+            string a = entrada->d_name;
+            if((a.compare(".") != 0) && (a.compare("..") != 0)){
+                iniciarOrdenacaoDeArquivosDeLog(&a);
+            }
+            
+        }
+    closedir (dir);
     
     std::cout << "Arquivos de log ordenados com sucesso!! \n";
 }
@@ -133,6 +143,7 @@ void* iniciarOrdenacaoDeArquivosDeLog(void* maquina)
 {
     DIR *dir = 0;
     string* maq_ = (static_cast<string*>(maquina));
+    
     string dirPath = path+*maq_;
     struct dirent *entrada = 0;
     unsigned char isFile = 0x8;
@@ -242,7 +253,7 @@ int compare (string aux1, string aux2)
     {
         difference = std::difftime(x, y) / (60 * 60 * 24);
     }
-    cout << difference << "\n" << endl;
+    //cout << difference << "\n" << endl;
     if ( difference < 0 )
     {
         return -1;
@@ -270,7 +281,9 @@ tm converterStringParaData(string dateTime)
     tm1.tm_hour = atoi(hora[0].c_str());
     tm1.tm_min = atoi(hora[1].c_str());
     tm1.tm_sec = atoi(hora[2].c_str());
-    
+    dia.clear();
+    aux.clear();
+    hora.clear();
     return tm1;
 }
 
