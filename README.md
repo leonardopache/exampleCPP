@@ -29,7 +29,7 @@ Premissas:
 
 Solução
 ------------
-Para resolver o problema foi implementado em C++, pois como uma das premissas é o tempo de execução portanto a escolha do C++ foi por ser uma linguagem de baixo nível e para tratar arquivos com tamanhos tão grande a implementação usa muito mais IOS com leitura e gravação de arquivos do que a manipulação de dados em memória. 
+Para resolver o problema foi implementado em C++, pois como uma das premissas é o tempo de execução o C++ foi escolhido por ser uma linguagem de baixo nível e para tratar arquivos com tamanhos tão grandes a implementação usa muito mais IOS com leitura e gravação de arquivos do que a manipulação de dados em memória. 
 O ambiente distribuído foi simulado entre diretórios de uma unidade física e através de threads é feito o processamento em paralelo dos arquivos de log. Esta estrutura pode ser vista na imagem abaixo:
 
 [imagem estrutura distribuída antes da execução]
@@ -42,7 +42,7 @@ O ambiente distribuído foi simulado entre diretórios de uma unidade física e 
 
 Funcionalidades cobertas pelo programa
 --------------------------------------
-Todos os pontos solicitados no enunciado está sendo coberto pelo aplicativo:
+Todos os pontos solicitados no enunciado estão sendo coberto pelo aplicativo:
 Dado um arquivo de log `log.txt` em um ambiente compartilhado o aplicativo lê o conteúdo deste arquivo e a cada linha é identificado o `userId` e inserido em um outro arquivo que ira conter todas as linhas do mesmo `userId`. Com o uso das threads para esse caso as 4 máquinas trabalham de forma paralela tratando seus arquivos de log.
 Para essa implementação não há a concorrência entre a leitura e escrita dos arquivos pois cada máquina trata apenas o log de sua máquina e escreve nos arquivos de saída dentro da mesma máquina.
 Passos executados:
