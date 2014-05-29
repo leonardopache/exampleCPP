@@ -40,8 +40,8 @@ O ambiente distribuído foi simulado entre diretórios de uma unidade física e 
 Funcionalidades cobertas pelo programa
 --------------------------------------
 Todos os pontos solicitados no enunciado está sendo coberto pelo aplicativo:
-Dado um arquivo de log `log.txt` em um ambiente compartilhado o aplicativo lê o conteúdo deste arquivo e a cada linha é identificado o `userId` e inserido em um outro arquivo que ira conter todas as linhas do mesmo `userId`. Com o uso das threads para esse caso as 4 maquinas trabalham de forma paralela tratando seus arquivos de log.
-Para essa implementação não há a concorrência entre a leitura e escrita dos arquivos pois cada maquina trata apenas o log de sua maquina e escreve nos arquivos de saída dentro da mesma máquina.
+Dado um arquivo de log `log.txt` em um ambiente compartilhado o aplicativo lê o conteúdo deste arquivo e a cada linha é identificado o `userId` e inserido em um outro arquivo que ira conter todas as linhas do mesmo `userId`. Com o uso das threads para esse caso as 4 máquinas trabalham de forma paralela tratando seus arquivos de log.
+Para essa implementação não há a concorrência entre a leitura e escrita dos arquivos pois cada máquina trata apenas o log de sua máquina e escreve nos arquivos de saída dentro da mesma máquina.
 Passos executados:
 
 Ler arquivo de log -> insere linha em saída correspondente -> ordena as saídas
