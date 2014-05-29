@@ -272,17 +272,15 @@ tm converterStringParaData(string dateTime)
     struct tm tm1;
     vector<string> dia = split(dateTime, "/");
     dia[2] = split(dia[2], ":")[0];
-    vector<string> aux = split(dateTime, ":");
-    vector<string> hora = {aux[1],aux[2],aux[3]};
+    vector<string> hora = split(dateTime, ":");
     
     tm1.tm_mday = atoi(dia[0].c_str());
     tm1.tm_mon = getIntMonthToStringMonth(dia[1]);
     tm1.tm_year = atoi(dia[2].c_str());
-    tm1.tm_hour = atoi(hora[0].c_str());
-    tm1.tm_min = atoi(hora[1].c_str());
-    tm1.tm_sec = atoi(hora[2].c_str());
+    tm1.tm_hour = atoi(hora[1].c_str());
+    tm1.tm_min = atoi(hora[2].c_str());
+    tm1.tm_sec = atoi(hora[3].c_str());
     dia.clear();
-    aux.clear();
     hora.clear();
     return tm1;
 }
