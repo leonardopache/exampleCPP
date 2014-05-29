@@ -29,13 +29,43 @@ Premissas:
 
 Solução
 ------------
+Para resolver o problema foi implementado em C++, pois como uma das premissas é o tempo de execução portanto a escolha do C++ foi por ser uma linguagem de baixo nível e para tratar arquivos com tamanhos tão grande a implementação usa muito mais IOS com leitura e gravação de arquivos do que a manipulação de dados em memória. 
+O ambiente distribuído foi simulado entre diretórios de uma unidade física e através de threads é feito o processamento em paralelo dos arquivos de log. Esta estrutura pode ser vista na imagem abaixo:
+
+[imagem estrutura distribuída simula]
+
+![alt tag](https://raw.github.com/leonardopache/exampleCPP/master/img.png)
+
 
 Funcionalidades cobertas pelo programa
 --------------------------------------
+Todos os pontos solicitados no enunciado está sendo coberto pelo aplicativo:
+Dado um arquivo de log `log.txt` em um ambiente compartilhado o aplicativo lê o conteúdo deste arquivo e a cada linha é identificado o `userId` e inserido em um outro arquivo que ira conter todas as linhas do mesmo `userId`. Com o uso das threads para esse caso as 4 maquinas trabalham de forma paralela tratando seus arquivos de log.
+Para essa implementação não há a concorrência entre a leitura e escrita dos arquivos pois cada maquina trata apenas o log de sua maquina e escreve nos arquivos de saída dentro da mesma máquina.
+Passos executados:
+
+Ler arquivo de log -> insere linha em saída correspondente -> ordena as saídas
+
 
 Possíveis melhorias identificadas
 ---------------------------------
+-Realizar a ordenação dos arquivos assim que é terminada o agrupamento das linhas de log para cada userId. Assim que termina a escrita do arquivo de um userId eu já tenho o caminho absoluto do arquivo podendo ser chamada a ordenação dentro da mesma thread o que evita a necessidade dos laços e validações feitas a partir da raiz para poder identificar o caminho do log e daí chamar a ordenação, que neste caso está sequencial ao final de todo o processamento dos arquivos de log de todas as máquinas;
 
+-A leitura dos arquivos de log poderia ser feita independente de sua localidade. Uma rotina que identifica as máquinas ativas e faz a varredura dos arquivos de log e inicia o seu tratamento;
+
+-A ordenação está sendo feita com uma granulidade alta, está ordenando até as diferenças de horas e não minutos e segundos.
+
+-Complexidade da ordenação está alta pois o algoritimo utilizado não é o mais eficiente. Implementar uma ordenação mais eficiente.
 
 Como Executar
 -------------  
+
+
+Informações de Desenv
+---------------------
+
+-C++
+-XCode 
+-OSX-10.9.3
+-Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn)
+
