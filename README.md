@@ -32,10 +32,13 @@ Solução
 Para resolver o problema foi implementado em C++, pois como uma das premissas é o tempo de execução portanto a escolha do C++ foi por ser uma linguagem de baixo nível e para tratar arquivos com tamanhos tão grande a implementação usa muito mais IOS com leitura e gravação de arquivos do que a manipulação de dados em memória. 
 O ambiente distribuído foi simulado entre diretórios de uma unidade física e através de threads é feito o processamento em paralelo dos arquivos de log. Esta estrutura pode ser vista na imagem abaixo:
 
-[imagem estrutura distribuída simula]
+[imagem estrutura distribuída antes da execução]
 
-![alt tag](https://raw.github.com/leonardopache/exampleCPP/master/img.png)
+![alt tag](https://raw.githubusercontent.com/leonardopache/exampleCPP/master/estrutura-maq-antes.fw.png)
 
+[imagem estrutura distribuída depois da execução]
+
+![alt tag](https://raw.githubusercontent.com/leonardopache/exampleCPP/master/estrutura-maq-depois.fw.png)
 
 Funcionalidades cobertas pelo programa
 --------------------------------------
