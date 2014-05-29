@@ -62,6 +62,7 @@ Possíveis melhorias identificadas
 
 Como Executar
 -------------  
+Para a execução é necessário que defina em código o valor da variável path com o caminho absoluto de onde estão os diretórios que representarão as maquinas distribuídas. Conforme figura mostrada acima.
 1. Abra o terminal, linha de comando, entre no diretório que foi salvo o arquivo `main.cpp`;
 2. Execute o comando: `g++ main.cpp`;
 3. Se não existir erros no código, um executável é gerado no mesmo diretório;
