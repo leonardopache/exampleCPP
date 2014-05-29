@@ -53,17 +53,21 @@ Possíveis melhorias identificadas
 
 -A leitura dos arquivos de log poderia ser feita independente de sua localidade. Uma rotina que identifica as máquinas ativas e faz a varredura dos arquivos de log e inicia o seu tratamento;
 
--A ordenação está sendo feita com uma granulidade alta, está ordenando até as diferenças de horas e não minutos e segundos.
+-A ordenação está sendo feita com uma granulidade alta, está ordenando até as diferenças de horas e não minutos e segundos;
 
--Complexidade da ordenação está alta pois o algoritimo utilizado não é o mais eficiente. Implementar uma ordenação mais eficiente.
+-Complexidade da ordenação está alta pois o algoritimo utilizado não é o mais eficiente. Implementar uma ordenação mais eficiente;
 
 Como Executar
 -------------  
-
+1. Abra o terminal, linha de comando, entre no diretório que foi salvo o arquivo `main.cpp`;
+2. Execute o comando: `g++ main.cpp`;
+3. Se não existir erros no código, um executável é gerado no mesmo diretório;
+4. Execute o comando `ls` e verá o arquivo entitulado `a.out`;
+5. Execute `./a.out` para rodar o programa!
 
 Informações de Desenv
 ---------------------
-
+source: exampleCPP / ReadFileLog / ReadFileLog / main.cpp
 -C++
 -XCode 
 -OSX-10.9.3
